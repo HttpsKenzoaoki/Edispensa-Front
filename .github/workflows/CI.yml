@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Rodar lint
-        run: CI=true npm lint
+        run: CI=true npm run lint
 
       - name: Build da aplicação
         run: npm run build
