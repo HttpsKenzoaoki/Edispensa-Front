@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Edispensa-Front
 
-## Getting Started
+Frontend do **Edispensa**, um sistema de dispensa para controle de Alunos (entrada, saída).
 
-First, run the development server:
+> Status: em desenvolvimento 👩🏼‍💻👨🏽‍💻👩🏽‍💻
+
+---
+
+## Visão geral (o que o sistema faz)
+
+O **Edispensa** é um sistema de **dispensa** que ajuda a:
+
+- Cadastrar e organizar alunos da escola
+- Dispensar Alunos
+
+## Tecnologias usadas
+
+Principais:
+
+- **Node.js** (ambiente de execução)
+- **Gerenciador de pacotes**: npm / yarn / pnpm
+- **Framework SPA/SSR**: Next.js | React | Lucide-React
+- **CSS**: CSS Modules 
+- **Consumo de API**: Fetch 
+
+## Requisitos
+
+- **Node.js**: recomendado **LTS**
+- **Git**
+
+---
+
+## Como clonar e iniciar
+
+### 1) Clonar o repositório
+
+```bash
+git clone https://github.com/HttpsKenzoaoki/Edispensa-Front.git
+cd Edispensa-Front
+```
+
+### 2) Instalar dependências
+
+Escolha um:
+
+```bash
+npm install
+# ou
+yarn
+# ou
+pnpm install
+```
+
+### 3) Rodar em modo desenvolvimento
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse no navegador:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- http://localhost:3000 *(porta comum; confirme a porta exibida no terminal)*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4) Build e execução em produção (opcional)
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Caso queira contribuir:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Faça um fork
+2. Crie uma branch: `git checkout -b feature/minha-feature`
+3. Commit: `git commit -m "feat: minha feature"`
+4. Push: `git push origin feature/minha-feature`
+5. Abra um Pull Request
