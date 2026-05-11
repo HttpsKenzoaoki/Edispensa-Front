@@ -1,6 +1,7 @@
 name: React CI/CD
 
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -21,8 +22,13 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
-      - name: Rodar lint
-        run: CI=true npm run lint
-
       - name: Build da aplicação
         run: npm run build
+
+      - name: Rodar anti-deploy-sexta
+        uses: github/codeql-action/init@v4
+        with:
+          languages: javascript-typescript
+      - uses: github/codeql-action/autobuild@v4
+      - uses: github/codeql-action/analyze@v4
+      
