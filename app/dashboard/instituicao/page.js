@@ -1,7 +1,252 @@
-export default function InstituicaoPage() {
-	return (
-		<main>
-			<h1>Instituição</h1>
-		</main>
-	);
+"use client";
+
+import { useState } from "react";
+import "./page.css";
+
+export default function Home() {
+  const [modalAutorizacao, setModalAutorizacao] = useState(false);
+  const [modalHistorico, setModalHistorico] = useState(false);
+  const [modalSolicitacoes, setModalSolicitacoes] = useState(false);
+
+  const solicitacoes = [
+    {
+      aluno: "Beatriz S.",
+      motivo: "Passeio escolar para o museu",
+      horario: "12 Mai, 08:00",
+      enviadoPor: "Coordenação",
+    },
+  ];
+
+  const historico = [
+    {
+      titulo: "Saída com Avós",
+      aluno: "Lucas S.",
+      responsavel: "João Avô",
+      data: "Hoje, 17:30",
+      status: "Agendado",
+    },
+    {
+      titulo: "Passeio Escolar - Museu",
+      aluno: "Beatriz S.",
+      responsavel: "Coordenação",
+      data: "12 Mai, 08:00",
+      status: "Concluído",
+    },
+    {
+      titulo: "Consulta médica",
+      aluno: "Lucas S.",
+      responsavel: "Mariana",
+      data: "08 Mai, 14:20",
+      status: "Concluído",
+    },
+  ];
+
+  return (
+    <main className="container">
+      <aside className="sidebar">
+        <h1>Main Menu</h1>
+        <p>Minimalismo Acadêmico</p>
+
+        <nav>
+          <button className="menuItem active">▦ Painel</button>
+
+          <button
+            className="menuItem"
+            onClick={() => setModalSolicitacoes(true)}
+          >
+            📄 Solicitações
+          </button>
+
+          <button className="menuItem" onClick={() => setModalHistorico(true)}>
+            ↺ Histórico
+          </button>
+        </nav>
+      </aside>
+
+      <section className="content">
+        <div className="topArea">
+          <div>
+            <h2>Secretaria: Controle de Saída</h2>
+            <p>Gerencie as autorizações de saída dos alunos.</p>
+          </div>
+
+            <button
+              className="addButton"
+              onClick={() => setModalAutorizacao(true)}
+            >
+              + Solicitar Dispensa
+            </button>
+          </div>
+
+
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">Aguardando Saída</h2>
+          <button className="filterButton">Filtrar</button>
+        </div>
+
+        <div className="authorizations">
+          <div className="authItem">
+            <div className="authIcon">
+              <img alt="Lucas Silva" src="/avatar-lucas.png" />
+            </div>
+
+            <div className="authInfo">
+              <h4>Lucas Silva</h4>
+              <p>6º Ano B • Resp: Mariana Silva</p>
+              <span className="chip">CARRO (PLACA ABC-1234)</span>
+            </div>
+
+            <button className="confirmButton">Confirmar</button>
+          </div>
+
+          <div className="authItem">
+            <div className="authIcon">
+              <img alt="Beatriz Costa" src="/avatar-beatriz.png" />
+            </div>
+
+            <div className="authInfo">
+              <h4>Beatriz Costa</h4>
+              <p>2º Ano A • Resp: João Costa</p>
+              <span className="chip">A PÉ</span>
+            </div>
+
+            <button className="confirmButton">Confirmar</button>
+          </div>
+
+          <div className="authItem">
+            <div className="authIcon">👤</div>
+
+            <div className="authInfo">
+              <h4>Mateus Oliveira</h4>
+              <p>9º Ano C • Resp: Carlos Oliveira</p>
+              <span className="chip">VAN ESCOLAR (#42)</span>
+            </div>
+
+            <button className="confirmButton">Confirmar</button>
+          </div>
+        </div>
+      </section>
+
+      {modalAutorizacao && (
+        <Modal onClose={() => setModalAutorizacao(false)}>
+          <h2>Nova Autorização de Saída</h2>
+          <p>Preencha os dados para autorizar a dispensa do aluno.</p>
+
+          <form className="formulario">
+            <label>
+              Aluno
+              <select>
+                <option>Lucas S. - 6º Ano B</option>
+                <option>Beatriz S. - 9º Ano A</option>
+              </select>
+            </label>
+
+            <label>
+              Data da saída
+              <input type="date" />
+            </label>
+
+            <label>
+              Horário permitido
+              <input type="time" />
+            </label>
+
+            <label>
+              Responsável pela retirada
+              <input type="text" placeholder="Ex: João Silva" />
+            </label>
+
+            <label>
+              Observação
+              <textarea placeholder="Ex: saída médica, compromisso familiar..." />
+            </label>
+
+            <div className="modalButtons">
+              <button type="button" onClick={() => setModalAutorizacao(false)}>
+                Cancelar
+              </button>
+              <button type="submit" className="confirmar">
+                Autorizar Saída
+              </button>
+            </div>
+          </form>
+        </Modal>
+      )}
+
+      {modalHistorico && (
+        <Modal onClose={() => setModalHistorico(false)}>
+          <h2>Histórico de Solicitações e Saídas</h2>
+          <p>Veja as últimas autorizações, solicitações e dispensas registradas.</p>
+
+          <div className="listaModal">
+            {historico.map((item, index) => (
+              <div className="itemModal" key={index}>
+                <div>
+                  <h4>{item.titulo}</h4>
+                  <p>
+                    {item.aluno} • {item.responsavel}
+                  </p>
+                </div>
+
+                <div className="itemDireita">
+                  <strong>{item.data}</strong>
+                  <span>{item.status}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Modal>
+      )}
+
+      {modalSolicitacoes && (
+        <Modal onClose={() => setModalSolicitacoes(false)}>
+          <h2>Solicitações da Escola</h2>
+          <p>Aqui aparecem pedidos enviados pela escola para saída dos alunos.</p>
+
+          {solicitacoes.length > 0 ? (
+            <div className="listaModal">
+              {solicitacoes.map((item, index) => (
+                <div className="solicitacaoCard" key={index}>
+                  <h4>{item.motivo}</h4>
+                  <p>
+                    <strong>Aluno:</strong> {item.aluno}
+                  </p>
+                  <p>
+                    <strong>Horário:</strong> {item.horario}
+                  </p>
+                  <p>
+                    <strong>Enviado por:</strong> {item.enviadoPor}
+                  </p>
+
+                  <div className="botoesSolicitacao">
+                    <button className="negar">Recusar</button>
+                    <button className="aceitar">Aceitar</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="semSolicitacoes">
+              <h3>Sem solicitações no momento</h3>
+              <p>A escola ainda não enviou nenhuma solicitação de saída.</p>
+            </div>
+          )}
+        </Modal>
+      )}
+    </main>
+  );
+}
+
+function Modal({ children, onClose }) {
+  return (
+    <div className="modalFundo">
+      <div className="modal">
+        <button className="fechar" onClick={onClose}>
+          ×
+        </button>
+
+        {children}
+      </div>
+    </div>
+  );
 }
