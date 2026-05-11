@@ -84,7 +84,7 @@ export default function Home() {
               <img src="/lucas.png" alt="Foto do Lucas" />
               <div>
                 <h3>Lucas S.</h3>
-                <p>6º Ano B</p>
+                <p>1º Ano DS</p>
               </div>
               <span className="status green">● Na Escola</span>
             </div>
@@ -102,7 +102,7 @@ export default function Home() {
               <img src="/beatriz.png" alt="Foto da Beatriz" />
               <div>
                 <h3>Beatriz S.</h3>
-                <p>9º Ano A</p>
+                <p>3º Ano LOG</p>
               </div>
               <span className="status gray">● Em Casa</span>
             </div>
@@ -160,8 +160,8 @@ export default function Home() {
             <label>
               Aluno
               <select>
-                <option>Lucas S. - 6º Ano B</option>
-                <option>Beatriz S. - 9º Ano A</option>
+                <option>Lucas S. - 1º Ano DS</option>
+                <option>Beatriz S. - 3º Ano LOG</option>
               </select>
             </label>
 
