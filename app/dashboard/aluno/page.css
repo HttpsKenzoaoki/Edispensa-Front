@@ -152,3 +152,76 @@ th {
   background: #ffd4d4;
   color: #b00000;
 }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  width: 420px;
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.modal label {
+  display: block;
+  margin-top: 14px;
+  font-weight: bold;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.modal textarea {
+  height: 90px;
+  resize: none;
+}
+
+.send-btn {
+  width: 100%;
+  margin-top: 20px;
+  background: #ffd000;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pendente {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.aprovada {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.negada {
+  background: #ffd4d4;
+  color: #b00000;
+}
