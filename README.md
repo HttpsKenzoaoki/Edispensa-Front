@@ -6,9 +6,9 @@ Frontend do **Edispensa**, um sistema de dispensa para controle de Alunos (entra
 
 > Tela de Login: Feita por Julia Locatelli
 
-> Tela de Dashboard da Instituiçã: Feita por Wiliam Kenzo
+> Tela de Dashboard da Instituição e Esqueci Senha: Feita por Wiliam Kenzo
 
-> Tela de Dashboard do Responsavel: Feita por Maria Beatriz
+> Tela de Dashboard do Responsavel e Aluno: Feita por Maria Beatriz
 
 ---
 
