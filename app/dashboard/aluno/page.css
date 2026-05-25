@@ -1,0 +1,154 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  color: #080808;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 28px;
+  border-right: 1px solid #eee;
+}
+
+.sidebar h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.sidebar span {
+  font-size: 11px;
+  color: #555;
+}
+
+.sidebar nav {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar button {
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar button.active {
+  background: #fff8dc;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 55px 45px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top h1 {
+  font-size: 34px;
+  margin: 0;
+}
+
+.top p {
+  margin-top: 10px;
+}
+
+.new-btn {
+  background: #ffd000;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-top: 55px;
+}
+
+.status-card,
+.summary-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 35px;
+}
+
+.status-card h2 {
+  font-size: 26px;
+}
+
+.status-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-card h3 span {
+  width: 12px;
+  height: 12px;
+  background: #ffd22e;
+  border-radius: 50%;
+}
+
+.summary-card p {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.table-section {
+  margin-top: 50px;
+}
+
+.table-section h2 {
+  margin-bottom: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 18px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  font-size: 14px;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.approved {
+  background: #e8e8e8;
+}
+
+.denied {
+  background: #ffd4d4;
+  color: #b00000;
+}
