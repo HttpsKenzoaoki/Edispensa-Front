@@ -2,7 +2,7 @@
 
 Frontend do **Edispensa**, um sistema de dispensa para controle de Alunos (entrada, saída).
 
-> Status: em desenvolvimento 👩🏼‍💻👨🏽‍💻👩🏽‍💻
+> Status: em desenvolvimento 👨🏽‍💻👩🏽‍💻
 
 > Tela de Login: Feita por Julia Locatelli
 
