@@ -3,6 +3,7 @@
 import "./page.css";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import {
@@ -115,9 +116,9 @@ export default function LoginPage() {
             <div className="senhaLabel">
               <label>Senha</label>
 
-              <button className="forgotPassword">
+              <Link className="forgotPassword" href="/forgot-password">
                 Esqueci minha senha
-              </button>
+              </Link>
             </div>
 
             <div className="inputContainer">
